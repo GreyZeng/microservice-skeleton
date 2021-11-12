@@ -3,19 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>cn.springcloud.book</groupId>
-        <artifactId>ch10-1</artifactId>
+        <groupId>git.snippets</groupId>
+        <artifactId>microservice-skeleton</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <name>ch10-1-user-service</name>
+    <name>skeleton-user-service</name>
 	<packaging>jar</packaging>
-    <artifactId>ch10-1-user-service</artifactId>
+    <artifactId>skeleton-user-service</artifactId>
 
     <dependencies>
         <dependency>
-			<groupId>cn.springcloud.book</groupId>
-			 <artifactId>ch10-1-common</artifactId>
+			<groupId>git.snippets</groupId>
+			 <artifactId>skeleton-common</artifactId>
 			 <version>${parent.version}</version>
         </dependency>
         <dependency>
