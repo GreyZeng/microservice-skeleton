@@ -2,7 +2,6 @@ package cn.springcloud.book.dataservice.controller;
 
 import cn.springcloud.book.common.context.UserContextHolder;
 import cn.springcloud.book.dataservice.config.DataConfig;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +14,11 @@ import java.util.List;
 @RestController
 public class DataController {
 
-    @Autowired
-    private DataConfig dataConfig;
+    private final DataConfig dataConfig;
+
+    public DataController(DataConfig dataConfig) {
+        this.dataConfig = dataConfig;
+    }
 
     @GetMapping("/getContextUserId")
     public String getContextUserId() {
