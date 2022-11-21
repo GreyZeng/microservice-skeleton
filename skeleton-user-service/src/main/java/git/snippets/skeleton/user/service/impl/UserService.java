@@ -1,7 +1,7 @@
-package cn.springcloud.book.user.service.impl;
+package git.snippets.skeleton.user.service.impl;
 
 
-import cn.springcloud.book.user.service.IUserService;
+import git.snippets.skeleton.user.service.IUserService;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -14,11 +14,13 @@ import java.util.List;
 public class UserService implements IUserService {
     @Override
     public String getDefaultUser() {
+        // TODO
         return "Default User";
     }
 
     @Override
     public String getContextUserId() {
+        // TODO
         return "Context User id";
     }
 

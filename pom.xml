@@ -14,12 +14,12 @@
 
     <modules>
         <module>skeleton-register-server</module>
-<!--        <module>skeleton-config-server</module>-->
+        <!--        <module>skeleton-config-server</module>-->
         <!--        <module>skeleton-zuul-server</module>-->
         <module>skeleton-user-service</module>
-<!--        <module>skeleton-common</module>-->
-<!--        <module>skeleton-data-service</module>-->
-<!--        <module>skeleton-hystrix-dashboard</module>-->
+        <!--        <module>skeleton-common</module>-->
+        <!--        <module>skeleton-data-service</module>-->
+        <!--  <module>skeleton-hystrix-dashboard</module>-->
     </modules>
 
     <properties>
@@ -32,11 +32,11 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
 <!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-web</artifactId>-->
+<!--        </dependency>-->
+        <!--        <dependency>-->
         <!--            <groupId>org.springframework.boot</groupId>-->
         <!--            <artifactId>spring-boot-starter-actuator</artifactId>-->
         <!--        </dependency>-->

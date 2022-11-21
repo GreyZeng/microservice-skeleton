@@ -1,7 +1,7 @@
-package cn.springcloud.book.user.controller;
+package git.snippets.skeleton.user.controller;
 
 
-import cn.springcloud.book.user.service.IUserService;
+import git.snippets.skeleton.user.service.IUserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

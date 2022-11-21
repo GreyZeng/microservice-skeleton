@@ -1,4 +1,4 @@
-package cn.springcloud.book.user.service;
+package git.snippets.skeleton.user.service;
 
 
 import java.util.List;

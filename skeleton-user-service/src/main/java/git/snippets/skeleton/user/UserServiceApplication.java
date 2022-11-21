@@ -1,11 +1,12 @@
-package cn.springcloud.book.user;
+package git.snippets.skeleton.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 
 @SpringBootApplication
-//@EnableDiscoveryClient
+@EnableDiscoveryClient
 //@EnableFeignClients
 //@EnableCircuitBreaker
 public class UserServiceApplication {
