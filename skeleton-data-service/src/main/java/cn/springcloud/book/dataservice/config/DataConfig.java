@@ -13,12 +13,12 @@ public class DataConfig {
 
     private String defaultUser;
 
-	public String getDefaultUser() {
-		return defaultUser;
-	}
+    public String getDefaultUser() {
+        return defaultUser;
+    }
 
-	public void setDefaultUser(String defaultUser) {
-		this.defaultUser = defaultUser;
-	}
-    
+    public void setDefaultUser(String defaultUser) {
+        this.defaultUser = defaultUser;
+    }
+
 }

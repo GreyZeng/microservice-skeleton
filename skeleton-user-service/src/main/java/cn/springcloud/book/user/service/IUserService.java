@@ -1,12 +1,15 @@
 package cn.springcloud.book.user.service;
 
 
-import java.util.List;	
+import java.util.List;
 
 /**
+ *
  */
 public interface IUserService {
-    public String getDefaultUser();
-    public String getContextUserId();
-    public List<String> getProviderData();
+    String getDefaultUser();
+
+    String getContextUserId();
+
+    List<String> getProviderData();
 }

@@ -9,6 +9,7 @@ public class HttpConvertUtil {
 
     /**
      * convert the httpServletRequest headers to headers map
+     *
      * @param request
      * @return
      */

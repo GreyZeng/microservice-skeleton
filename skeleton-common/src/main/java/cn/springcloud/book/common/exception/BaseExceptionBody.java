@@ -4,88 +4,87 @@ import java.io.Serializable;
 
 public class BaseExceptionBody implements Serializable {
 
-	/**
-	 * serialVersionUID
-	 */
-	private static final long serialVersionUID = -1270478894426234738L;
+    /**
+     * serialVersionUID
+     */
+    private static final long serialVersionUID = -1270478894426234738L;
 
-	/**
-	 * 相关业务ID
-	 */
-	private Long businessId;
+    /**
+     * 相关业务ID
+     */
+    private Long businessId;
 
-	/**
-	 * 异常编码：数字
-	 */
-	private Integer code;
+    /**
+     * 异常编码：数字
+     */
+    private Integer code;
 
-	/**
-	 * 异常编码：英文短语
-	 */
-	private String codeEN;
+    /**
+     * 异常编码：英文短语
+     */
+    private String codeEN;
 
-	/**
-	 * 异常信息
-	 */
-	private String businessMessage;
-	
-	/**
-	 * 异常类型
-	 */
-	private String exceptionType;
-	
-	
+    /**
+     * 异常信息
+     */
+    private String businessMessage;
 
-	public Long getBusinessId() {
-		return businessId;
-	}
+    /**
+     * 异常类型
+     */
+    private String exceptionType;
 
-	public void setBusinessId(Long businessId) {
-		this.businessId = businessId;
-	}
 
-	public Integer getCode() {
-		return code;
-	}
+    public Long getBusinessId() {
+        return businessId;
+    }
 
-	public void setCode(Integer code) {
-		this.code = code;
-	}
+    public void setBusinessId(Long businessId) {
+        this.businessId = businessId;
+    }
 
-	public String getCodeEN() {
-		return codeEN;
-	}
+    public Integer getCode() {
+        return code;
+    }
 
-	public void setCodeEN(String codeEN) {
-		this.codeEN = codeEN;
-	}
+    public void setCode(Integer code) {
+        this.code = code;
+    }
 
-	public String getBusinessMessage() {
-		return businessMessage;
-	}
+    public String getCodeEN() {
+        return codeEN;
+    }
 
-	public void setBusinessMessage(String businessMessage) {
-		this.businessMessage = businessMessage;
-	}
+    public void setCodeEN(String codeEN) {
+        this.codeEN = codeEN;
+    }
 
-	public String getExceptionType() {
-		return exceptionType;
-	}
+    public String getBusinessMessage() {
+        return businessMessage;
+    }
 
-	public void setExceptionType(String exceptionType) {
-		this.exceptionType = exceptionType;
-	}
+    public void setBusinessMessage(String businessMessage) {
+        this.businessMessage = businessMessage;
+    }
 
-	public BaseExceptionBody() {
+    public String getExceptionType() {
+        return exceptionType;
+    }
 
-	}
+    public void setExceptionType(String exceptionType) {
+        this.exceptionType = exceptionType;
+    }
 
-	public BaseExceptionBody(BaseException exception) {
-		this.businessId = exception.getBusinessId();
-		this.code = exception.getCode();
-		this.codeEN = exception.getCodeEN();
-		this.businessMessage = exception.getMessage();
-		this.exceptionType = exception.getClass().getName();
-	}
+    public BaseExceptionBody() {
+
+    }
+
+    public BaseExceptionBody(BaseException exception) {
+        this.businessId = exception.getBusinessId();
+        this.code = exception.getCode();
+        this.codeEN = exception.getCodeEN();
+        this.businessMessage = exception.getMessage();
+        this.exceptionType = exception.getClass().getName();
+    }
 
 }
