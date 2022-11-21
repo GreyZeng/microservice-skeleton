@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: sc-zuul-server
-server:
-  port: 7777
-

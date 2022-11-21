@@ -1,0 +1,11 @@
+#spring:
+#  application:
+#    name: sc-zuul-server
+#server:
+#  port: 7777
+
+server:
+  port: 7777
+spring:
+  application:
+    name: sc-gateway
