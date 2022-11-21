@@ -6,7 +6,7 @@
         <artifactId>microservice-skeleton</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>skeleton-eureka-server</artifactId>
+    <artifactId>skeleton-register-server</artifactId>
     <packaging>jar</packaging>
 
 
