@@ -13,7 +13,7 @@
     <name>${artifactId}</name>
 
     <modules>
-        <module>skeleton-eureka-server</module>
+        <module>skeleton-register-server</module>
         <module>skeleton-config-server</module>
         <module>skeleton-zuul-server</module>
         <module>skeleton-user-service</module>
