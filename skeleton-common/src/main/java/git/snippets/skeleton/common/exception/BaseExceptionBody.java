@@ -1,4 +1,4 @@
-package cn.springcloud.book.common.exception;
+package git.snippets.skeleton.common.exception;
 
 import java.io.Serializable;
 

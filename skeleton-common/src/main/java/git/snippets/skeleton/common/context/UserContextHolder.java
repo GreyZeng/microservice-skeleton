@@ -1,6 +1,6 @@
-package cn.springcloud.book.common.context;
+package git.snippets.skeleton.common.context;
 
-import cn.springcloud.book.common.vo.User;
+import git.snippets.skeleton.common.vo.User;
 
 /**
  * 用户上下文

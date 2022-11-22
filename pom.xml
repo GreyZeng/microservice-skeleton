@@ -17,7 +17,7 @@
         <!--        <module>skeleton-config-server</module>-->
                 <module>skeleton-gateway</module>
         <module>skeleton-user-service</module>
-        <!--        <module>skeleton-common</module>-->
+<!--                <module>skeleton-common</module>-->
         <!--        <module>skeleton-data-service</module>-->
         <!--  <module>skeleton-hystrix-dashboard</module>-->
     </modules>

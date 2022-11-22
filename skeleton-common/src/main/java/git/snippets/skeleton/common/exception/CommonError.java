@@ -1,6 +1,6 @@
-package cn.springcloud.book.common.exception;
+package git.snippets.skeleton.common.exception;
 
-import cn.springcloud.book.common.util.ExceptionUtil;
+import git.snippets.skeleton.common.util.ExceptionUtil;
 
 /**
  * 通用异常信息

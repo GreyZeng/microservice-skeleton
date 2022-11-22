@@ -1,9 +1,9 @@
-package cn.springcloud.book.common.config;
+package git.snippets.skeleton.common.config;
 
-import cn.springcloud.book.common.context.SpringCloudHystrixConcurrencyStrategy;
-import cn.springcloud.book.common.intercepter.FeignUserContextInterceptor;
-import cn.springcloud.book.common.intercepter.RestTemplateUserContextInterceptor;
-import cn.springcloud.book.common.intercepter.UserContextInterceptor;
+import git.snippets.skeleton.common.context.SpringCloudHystrixConcurrencyStrategy;
+import git.snippets.skeleton.common.intercepter.FeignUserContextInterceptor;
+import git.snippets.skeleton.common.intercepter.RestTemplateUserContextInterceptor;
+import git.snippets.skeleton.common.intercepter.UserContextInterceptor;
 import feign.Feign;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;

@@ -1,7 +1,7 @@
-package cn.springcloud.book.common.intercepter;
+package git.snippets.skeleton.common.intercepter;
 
-import cn.springcloud.book.common.context.UserContextHolder;
-import cn.springcloud.book.common.vo.User;
+import git.snippets.skeleton.common.context.UserContextHolder;
+import git.snippets.skeleton.common.vo.User;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;

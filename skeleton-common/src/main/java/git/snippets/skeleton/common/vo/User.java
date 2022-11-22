@@ -1,4 +1,4 @@
-package cn.springcloud.book.common.vo;
+package git.snippets.skeleton.common.vo;
 
 
 import java.io.Serializable;

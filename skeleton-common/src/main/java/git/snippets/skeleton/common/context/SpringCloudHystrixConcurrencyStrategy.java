@@ -1,4 +1,4 @@
-package cn.springcloud.book.common.context;
+package git.snippets.skeleton.common.context;
 
 import com.netflix.hystrix.HystrixThreadPoolKey;
 import com.netflix.hystrix.HystrixThreadPoolProperties;

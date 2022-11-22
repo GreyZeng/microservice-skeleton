@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  cn.springcloud.book.common.config.CommonConfiguration
+  git.snippets.skeleton.common.config.CommonConfiguration

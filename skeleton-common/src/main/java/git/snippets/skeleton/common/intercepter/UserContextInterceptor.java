@@ -1,8 +1,8 @@
-package cn.springcloud.book.common.intercepter;
+package git.snippets.skeleton.common.intercepter;
 
-import cn.springcloud.book.common.context.UserContextHolder;
-import cn.springcloud.book.common.util.HttpConvertUtil;
-import cn.springcloud.book.common.vo.User;
+import git.snippets.skeleton.common.context.UserContextHolder;
+import git.snippets.skeleton.common.util.HttpConvertUtil;
+import git.snippets.skeleton.common.vo.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;

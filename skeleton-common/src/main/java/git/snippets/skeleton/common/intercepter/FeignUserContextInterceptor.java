@@ -1,4 +1,4 @@
-package cn.springcloud.book.common.intercepter;
+package git.snippets.skeleton.common.intercepter;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;

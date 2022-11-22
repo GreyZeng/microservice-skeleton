@@ -1,6 +1,6 @@
-package cn.springcloud.book.common.util;
+package git.snippets.skeleton.common.util;
 
-import cn.springcloud.book.common.vo.User;
+import git.snippets.skeleton.common.vo.User;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletResponse;

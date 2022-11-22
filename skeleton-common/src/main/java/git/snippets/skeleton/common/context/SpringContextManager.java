@@ -1,4 +1,4 @@
-package cn.springcloud.book.common.context;
+package git.snippets.skeleton.common.context;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

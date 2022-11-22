@@ -1,4 +1,4 @@
-package cn.springcloud.book.common.context;
+package git.snippets.skeleton.common.context;
 
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;

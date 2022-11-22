@@ -1,4 +1,4 @@
-package cn.springcloud.book.common.util;
+package git.snippets.skeleton.common.util;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Enumeration;
