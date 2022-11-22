@@ -1,12 +1,10 @@
-server:
-  port: 9091
-  #spring:
-  #  cloud:
-  #    config:
-  #      label: master
-  #      uri: http://localhost:9090
-  #      name: config-info
-  #      profile: dev
+#spring:
+#  cloud:
+#    config:
+#      label: master
+#      uri: http://localhost:9090
+#      name: config-info
+#      profile: dev
 eureka:
   client:
     serviceUrl:
@@ -15,4 +13,6 @@ eureka:
     prefer-ip-address: true
 spring:
   application:
-    name: "sc-user-service"
+    name: sc-user-service
+server:
+  port: 9091
