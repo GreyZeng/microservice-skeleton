@@ -1,17 +1,15 @@
-package git.snippets.gateway.config;
+package git.snippets.skeleton.gateway.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Component
 @RefreshScope
 @ConfigurationProperties(prefix = "gateway.uaa")
-public class GatewayProperties {
+public class UaaProperties {
 
     /**
      * 忽略URL，List列表形式

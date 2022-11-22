@@ -13,13 +13,11 @@ spring:
     gateway:
       routes:
         - id: sc-user-service
-          uri: ${test.uri} # uri以lb://开头（lb代表从注册中心获取服务），后面接的就是你需要转发到的服务名称
+          uri: lb://${spring.cloud.gateway.routes[0].id} # uri以lb://开头（lb代表从注册中心获取服务），后面接的就是你需要转发到的服务名称
           predicates:
             - Path=/${spring.cloud.gateway.routes[0].id}/**
           filters:
             - StripPrefix=1 # 表示在转发时去掉 all
-test:
-  uri: lb://sc-user-service
 
 eureka:
   client:
@@ -29,7 +27,7 @@ eureka:
     prefer-ip-address: true
 gateway:
   uaa:
-    enable: false
+    enable: true
     ignore-url:
       - /auth/login/**
       - /auth/callback/**

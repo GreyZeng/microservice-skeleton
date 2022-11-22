@@ -1,2 +1,2 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  git.snippets.skeleton.common.config.CommonConfiguration
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+#  git.snippets.skeleton.common.config.CommonConfiguration

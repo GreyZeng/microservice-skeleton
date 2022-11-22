@@ -1,5 +1,6 @@
 package git.snippets.skeleton.common.util;
 
+
 import org.apache.commons.lang.StringUtils;
 
 /**
