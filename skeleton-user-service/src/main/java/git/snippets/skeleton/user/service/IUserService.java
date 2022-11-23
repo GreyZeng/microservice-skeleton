@@ -2,8 +2,7 @@ package git.snippets.skeleton.user.service;
 
 
 import reactor.core.publisher.Flux;
-
-import java.util.List;
+import reactor.core.publisher.Mono;
 
 /**
  *
@@ -11,7 +10,7 @@ import java.util.List;
 public interface IUserService {
     String getDefaultUser();
 
-    String getContextUserId();
+    Mono<String> getContextUserId();
 
     //List<String> getProviderData();
     Flux<String> getProviderData();

@@ -5,7 +5,6 @@ import git.snippets.skeleton.common.exception.BaseExceptionBody;
 import git.snippets.skeleton.common.vo.User;
 import git.snippets.skeleton.gateway.config.UaaProperties;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -17,15 +16,13 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
-import javax.annotation.Resource;
-
 import static com.alibaba.fastjson.JSON.toJSON;
 import static git.snippets.skeleton.common.exception.CommonError.AUTH_EMPTY_ERROR;
 
 @Component
 @EnableConfigurationProperties(UaaProperties.class)
 public class GatewayFilter implements GlobalFilter, Ordered {
-private final UaaProperties gatewayProperties;
+    private final UaaProperties gatewayProperties;
 
     public GatewayFilter(UaaProperties gatewayProperties) {
         this.gatewayProperties = gatewayProperties;

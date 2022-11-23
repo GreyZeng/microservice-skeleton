@@ -2,28 +2,23 @@ package git.snippets.skeleton.user.service.impl;
 
 
 import git.snippets.skeleton.user.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import git.snippets.skeleton.user.service.dataservice.DataService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 /**
  *
  */
 @Component
 public class UserService implements IUserService {
-
-    private final WebClient.Builder loadBalancedWebClientBuilder;
-
+    private final DataService dataService;
     private final WebClient webClient;
 
-    public UserService(WebClient.Builder loadBalancedWebClientBuilder) {
-        this.loadBalancedWebClientBuilder = loadBalancedWebClientBuilder;
+    public UserService(WebClient.Builder loadBalancedWebClientBuilder, DataService dataService) {
         this.webClient = loadBalancedWebClientBuilder.build();
+        this.dataService = dataService;
     }
 
     @Override
@@ -33,9 +28,8 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public String getContextUserId() {
-        // TODO
-        return "Context User id";
+    public Mono<String> getContextUserId() {
+        return dataService.getContextUserId();
     }
 
     @Override

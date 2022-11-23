@@ -19,20 +19,23 @@
 package git.snippets.skeleton.user.service.dataservice;
 
 
-import git.snippets.skeleton.common.vo.User;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import reactivefeign.spring.config.ReactiveFeignClient;
+import reactor.core.publisher.Mono;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
-@FeignClient(name = "sc-data-service")
+@ReactiveFeignClient(value = "sc-data-service", url = "sc-data-service")
 public interface DataService {
-    @RequestMapping(value = "/user/add", method = GET)
-    String addUser(User user);
+    //    @RequestMapping(value = "/user/add", method = GET)
+//    String addUser(User user);
+//
+//    @RequestMapping(value = "/user/update", method = POST)
+//    String updateUser(@RequestBody User user);
+    @RequestMapping(value = "/getContextUserId", method = GET)
+    Mono<String> getContextUserId();
 
-    @RequestMapping(value = "/user/update", method = POST)
-    String updateUser(@RequestBody User user);
+//    @RequestMapping(value = "/getDefaultUser", method = GET)
+//    String getDefaultUser();
 }
 

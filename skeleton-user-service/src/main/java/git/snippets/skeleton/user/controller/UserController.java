@@ -5,8 +5,7 @@ import git.snippets.skeleton.user.service.IUserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
-
-import java.util.List;
+import reactor.core.publisher.Mono;
 
 /**
  *
@@ -36,7 +35,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/getContextUserId")
-    public String getContextUserId() {
+    public Mono<String> getContextUserId() {
         return userService.getContextUserId();
     }
 
