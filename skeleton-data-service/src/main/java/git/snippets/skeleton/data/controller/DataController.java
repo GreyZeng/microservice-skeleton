@@ -1,11 +1,15 @@
 package git.snippets.skeleton.data.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class DataController {
 
-//    private final DataConfig dataConfig;
+    //    private final DataConfig dataConfig;
 //
 //    public DataController(DataConfig dataConfig) {
 //        this.dataConfig = dataConfig;
@@ -21,14 +25,14 @@ public class DataController {
 //        return dataConfig.getDefaultUser();
 //    }
 //
-//    @GetMapping("/getProviderData")
-//    public List<String> getProviderData() {
-//        List<String> provider = new ArrayList<String>();
-//        provider.add("Beijing Company");
-//        provider.add("Shanghai Company");
-//        provider.add("Shenzhen Company");
-//        return provider;
-//    }
+    @GetMapping("/getProviderData")
+    public List<String> getProviderData() {
+        List<String> provider = new ArrayList<>();
+        provider.add("Beijing Company");
+        provider.add("Shanghai Company");
+        provider.add("Shenzhen Company");
+        return provider;
+    }
 
 
 }

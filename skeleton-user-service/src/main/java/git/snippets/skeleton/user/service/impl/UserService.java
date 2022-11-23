@@ -3,8 +3,10 @@ package git.snippets.skeleton.user.service.impl;
 
 import git.snippets.skeleton.user.service.IUserService;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -12,6 +14,13 @@ import java.util.List;
  */
 @Component
 public class UserService implements IUserService {
+
+    private final WebClient webClient;
+
+    public UserService(WebClient webClient) {
+        this.webClient = webClient;
+    }
+
     @Override
     public String getDefaultUser() {
         // TODO
@@ -26,10 +35,17 @@ public class UserService implements IUserService {
 
     @Override
     public List<String> getProviderData() {
-        return Arrays.asList("a", "b");
+        Mono<List> listMono = webClient.get().uri("http://sc-data-service/getProviderData").retrieve().bodyToMono(List.class);
+        return listMono.
+        List<String> result = webClient.getForObject("http://sc-data-service/getProviderData", List.class);
+        return result;
     }
+//    @Override
+//    public List<String> getProviderData() {
+//        return Arrays.asList("a", "b");
+//    }
 
-//    private final DataService dataService;
+    //    private final DataService dataService;
 //
 //    private final RestTemplate restTemplate;
 //
@@ -48,9 +64,4 @@ public class UserService implements IUserService {
 //        return dataService.getContextUserId();
 //    }
 //
-//    @Override
-//    public List<String> getProviderData() {
-//        List<String> result = restTemplate.getForObject("http://sc-data-service/getProviderData", List.class);
-//        return result;
-//    }
 }
