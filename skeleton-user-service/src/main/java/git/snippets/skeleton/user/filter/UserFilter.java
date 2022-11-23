@@ -29,7 +29,7 @@ public class UserFilter implements OrderedWebFilter {
         HttpHeaders headers = exchange.getRequest().getHeaders();
         Set<Map.Entry<String, List<String>>> entries = headers.entrySet();
         for (Map.Entry<String, List<String>> entry : entries) {
-            System.out.println("key is " + entry.getKey() + "and values are" + entry.getValue());
+            System.out.println("key is " + entry.getKey() + " and values are" + entry.getValue());
         }
         // Map<String, String> header = httpRequestToMap(request);
         String userId = headers.getFirst(User.CONTEXT_KEY_USERID);

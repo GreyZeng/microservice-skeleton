@@ -18,18 +18,16 @@
 //}
 package git.snippets.skeleton.user.service.dataservice;
 
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
-import git.snippets.skeleton.common.vo.User;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import reactivefeign.spring.config.ReactiveFeignClient;
 import reactor.core.publisher.Mono;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-
 @ReactiveFeignClient(value = "sc-data-service", url = "sc-data-service")
 public interface DataService {
-    //    @RequestMapping(value = "/user/add", method = GET)
+    // @RequestMapping(value = "/user/add", method = GET)
 //    String addUser(User user);
 //
 //    @RequestMapping(value = "/user/update", method = POST)
@@ -40,4 +38,3 @@ public interface DataService {
 //    @RequestMapping(value = "/getDefaultUser", method = GET)
 //    String getDefaultUser();
 }
-
