@@ -8,6 +8,10 @@ import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 @Component
 public class UserFilter implements OrderedWebFilter {
 
@@ -19,11 +23,15 @@ public class UserFilter implements OrderedWebFilter {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
+        System.out.println("user service filter");
         HttpHeaders headers = exchange.getRequest().getHeaders();
+        Set<Map.Entry<String, List<String>>> entries = headers.entrySet();
+        for (Map.Entry<String, List<String>> entry : entries) {
+            System.out.println("key is " + entry.getKey() + "and values are" + entry.getValue());
+        }
         // Map<String, String> header = httpRequestToMap(request);
         String userId = headers.getFirst(User.CONTEXT_KEY_USERID);
-        exchange.getResponse().getHeaders().addAll(exchange.getRequest().getHeaders());
-        return chain.filter(exchange).contextWrite(ctx -> ctx.put(User.CONTEXT_KEY_USERID, userId));
+        return chain.filter(exchange.mutate().request(exchange.getRequest().mutate().header(User.CONTEXT_KEY_USERID, userId).build()).build()).contextWrite(ctx -> ctx.put(User.CONTEXT_KEY_USERID, userId));
     }
 }
 
