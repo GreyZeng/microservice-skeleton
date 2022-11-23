@@ -58,8 +58,9 @@ public class GatewayFilter implements GlobalFilter, Ordered {
 //            for (Map.Entry<String, String> entry : header.entrySet()) {
 //                ctx.addZuulRequestHeader(entry.getKey(), entry.getValue());
 //            }
+
             exchange.getResponse().getHeaders().addAll(exchange.getRequest().getHeaders());
-            return chain.filter(exchange);
+            return chain.filter(exchange).contextWrite(ctx -> ctx.put(User.CONTEXT_KEY_USERID, userId));
         }
         //如果在忽略的url里，则跳过
 //        String path = replacePrefix(exchange.getRequest().getURI().getPath());

@@ -1,4 +1,4 @@
-//package git.snippets.skeleton.common.intercepter;
+//package git.snippets.skeleton.common.interceptor;
 //
 //import git.snippets.skeleton.common.context.UserContextHolder;
 //import git.snippets.skeleton.common.util.HttpConvertUtil;

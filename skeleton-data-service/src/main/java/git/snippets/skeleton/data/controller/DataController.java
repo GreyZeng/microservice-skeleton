@@ -1,5 +1,6 @@
 package git.snippets.skeleton.data.controller;
 
+import git.snippets.skeleton.common.vo.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
@@ -16,8 +17,8 @@ public class DataController {
 //
     @GetMapping("/getContextUserId")
     public Mono<String> getContextUserId() {
-        // return UserContextHolder.currentUser().getUserId();
-        return Mono.just("hello context id");
+//        return Mono.deferContextual(ctx -> Mono.just(ctx.get(User.CONTEXT_KEY_USERID)));
+        return Mono.subscriberContext().map(x -> x.get(User.CONTEXT_KEY_USERID));
     }
 
     //

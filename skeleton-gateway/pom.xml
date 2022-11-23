@@ -4,7 +4,7 @@
     <parent>
         <groupId>git.snippets</groupId>
         <artifactId>microservice-skeleton</artifactId>
-        <version>1.0.4.RELEASE</version>
+        <version>1.0.5.RELEASE</version>
     </parent>
     <artifactId>skeleton-gateway</artifactId>
     <dependencies>

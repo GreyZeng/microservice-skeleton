@@ -9,7 +9,7 @@
     <groupId>git.snippets</groupId>
     <artifactId>microservice-skeleton</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.4.RELEASE</version>
+    <version>1.0.5.RELEASE</version>
     <name>${artifactId}</name>
 
     <modules>
@@ -28,7 +28,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-cloud.version>2021.0.5</spring-cloud.version>
-        <common.version>1.0.4.RELEASE</common.version>
+        <common.version>1.0.5.RELEASE</common.version>
     </properties>
 
     <dependencies>
