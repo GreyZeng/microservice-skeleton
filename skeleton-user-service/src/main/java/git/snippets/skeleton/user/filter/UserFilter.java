@@ -1,8 +1,10 @@
 package git.snippets.skeleton.user.filter;
 
+import git.snippets.skeleton.common.interceptor.ReactiveRequestContextHolder;
 import git.snippets.skeleton.common.vo.User;
 import org.springframework.boot.web.reactive.filter.OrderedWebFilter;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilterChain;
@@ -31,7 +33,8 @@ public class UserFilter implements OrderedWebFilter {
         }
         // Map<String, String> header = httpRequestToMap(request);
         String userId = headers.getFirst(User.CONTEXT_KEY_USERID);
-        return chain.filter(exchange.mutate().request(exchange.getRequest().mutate().header(User.CONTEXT_KEY_USERID, userId).build()).build()).contextWrite(ctx -> ctx.put(User.CONTEXT_KEY_USERID, userId));
+        ServerHttpRequest request = exchange.getRequest();
+        return chain.filter(exchange.mutate().request(exchange.getRequest().mutate().header(User.CONTEXT_KEY_USERID, userId).build()).build()).contextWrite(ctx -> ctx.put(ReactiveRequestContextHolder.CONTEXT_KEY, request));
     }
 }
 

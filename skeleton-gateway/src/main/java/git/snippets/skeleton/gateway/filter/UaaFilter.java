@@ -2,6 +2,7 @@ package git.snippets.skeleton.gateway.filter;
 
 import git.snippets.skeleton.common.exception.BaseException;
 import git.snippets.skeleton.common.exception.BaseExceptionBody;
+import git.snippets.skeleton.common.interceptor.ReactiveRequestContextHolder;
 import git.snippets.skeleton.common.vo.User;
 import git.snippets.skeleton.gateway.config.UaaProperties;
 import org.apache.commons.lang.StringUtils;
@@ -10,6 +11,7 @@ import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
@@ -116,7 +118,8 @@ public class UaaFilter implements GatewayFilter {
 //            for (Map.Entry<String, String> entry : header.entrySet()) {
 //                ctx.addZuulRequestHeader(entry.getKey(), entry.getValue());
 //            }
-            return chain.filter(exchange.mutate().request(exchange.getRequest().mutate().header(User.CONTEXT_KEY_USERID, userId).build()).build()).contextWrite(ctx -> ctx.put(User.CONTEXT_KEY_USERID, userId));
+            //ServerHttpRequest request = exchange.getRequest();
+            return chain.filter(exchange.mutate().request(exchange.getRequest().mutate().header(User.CONTEXT_KEY_USERID, userId).build()).build());
         }
         //如果在忽略的url里，则跳过
 //        String path = replacePrefix(exchange.getRequest().getURI().getPath());

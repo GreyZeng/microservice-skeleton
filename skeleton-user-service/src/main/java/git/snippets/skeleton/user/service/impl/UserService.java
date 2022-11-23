@@ -1,6 +1,7 @@
 package git.snippets.skeleton.user.service.impl;
 
 
+import git.snippets.skeleton.common.interceptor.ReactiveRequestContextHolder;
 import git.snippets.skeleton.common.vo.User;
 import git.snippets.skeleton.user.service.IUserService;
 import git.snippets.skeleton.user.service.dataservice.DataService;
@@ -37,14 +38,14 @@ public class UserService implements IUserService {
 
     @Override
     public Mono<String> getContextUserId() {
-        return dataService.getContextUserId("dddd");
+       // return ReactiveRequestContextHolder.getRequest().map(request -> request.getHeaders().getFirst(User.CONTEXT_KEY_USERID));
+         return dataService.getContextUserId();
     }
 
     @Override
     public Flux<String> getProviderData() {
         return webClient.get().uri("http://sc-data-service/getProviderData").header(User.CONTEXT_KEY_USERID, "abc").retrieve().bodyToFlux(String.class);
     }
-//    @Override
 //    public List<String> getProviderData() {
 //        return Arrays.asList("a", "b");
 //    }

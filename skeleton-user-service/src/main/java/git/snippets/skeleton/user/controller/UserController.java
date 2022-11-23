@@ -1,6 +1,8 @@
 package git.snippets.skeleton.user.controller;
 
 
+import git.snippets.skeleton.common.interceptor.ReactiveRequestContextHolder;
+import git.snippets.skeleton.common.vo.User;
 import git.snippets.skeleton.user.service.IUserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,9 +38,11 @@ public class UserController {
      */
     @GetMapping("/getContextUserId")
     public Mono<String> getContextUserId() {
-        return userService.getContextUserId();
+        //return userService.getContextUserId();
         // return Mono.deferContextual(ctx -> ctx.get(User.CONTEXT_KEY_USERID));
         //return Mono.subscriberContext().map(x -> x.get(User.CONTEXT_KEY_USERID));
+        return ReactiveRequestContextHolder.getRequest()
+                .map(request -> request.getHeaders().getFirst(User.CONTEXT_KEY_USERID));
     }
 
     /**
