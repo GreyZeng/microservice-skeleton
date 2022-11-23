@@ -1,6 +1,8 @@
 package git.snippets.skeleton.user.service;
 
 
+import reactor.core.publisher.Flux;
+
 import java.util.List;
 
 /**
@@ -11,5 +13,6 @@ public interface IUserService {
 
     String getContextUserId();
 
-    List<String> getProviderData();
+    //List<String> getProviderData();
+    Flux<String> getProviderData();
 }

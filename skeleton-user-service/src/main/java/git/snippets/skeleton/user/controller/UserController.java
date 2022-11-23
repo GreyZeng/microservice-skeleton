@@ -4,6 +4,7 @@ package git.snippets.skeleton.user.controller;
 import git.snippets.skeleton.user.service.IUserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 
@@ -45,7 +46,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/getProviderData")
-    public List<String> getProviderData() {
+    public Flux<String> getProviderData() {
         return userService.getProviderData();
     }
 }

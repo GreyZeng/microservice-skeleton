@@ -2,8 +2,10 @@ package git.snippets.skeleton.user.service.impl;
 
 
 import git.snippets.skeleton.user.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
@@ -15,10 +17,13 @@ import java.util.concurrent.ExecutionException;
 @Component
 public class UserService implements IUserService {
 
+    private final WebClient.Builder loadBalancedWebClientBuilder;
+
     private final WebClient webClient;
 
-    public UserService() {
-        this.webClient = WebClient.builder().build();
+    public UserService(WebClient.Builder loadBalancedWebClientBuilder) {
+        this.loadBalancedWebClientBuilder = loadBalancedWebClientBuilder;
+        this.webClient = loadBalancedWebClientBuilder.build();
     }
 
     @Override
@@ -34,18 +39,8 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public List<String> getProviderData() {
-        try {
-            Mono<List<String>> listMono = webClient.get().uri("http://sc-data-service/getProviderData").retrieve().bodyToFlux(String.class).collectList();
-
-            List<String> strings = listMono.toFuture().get();
-            System.out.println(strings);
-            return strings;
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        } catch (ExecutionException e) {
-            throw new RuntimeException(e);
-        }
+    public Flux<String> getProviderData() {
+        return webClient.get().uri("http://sc-data-service/getProviderData").retrieve().bodyToFlux(String.class);
     }
 //    @Override
 //    public List<String> getProviderData() {

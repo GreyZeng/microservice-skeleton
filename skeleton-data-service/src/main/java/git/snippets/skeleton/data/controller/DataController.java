@@ -2,6 +2,7 @@ package git.snippets.skeleton.data.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,12 +27,12 @@ public class DataController {
 //    }
 //
     @GetMapping("/getProviderData")
-    public List<String> getProviderData() {
+    public Flux<String> getProviderData() {
         List<String> provider = new ArrayList<>();
         provider.add("Beijing Company");
         provider.add("Shanghai Company");
         provider.add("Shenzhen Company");
-        return provider;
+        return Flux.fromIterable(provider);
     }
 
 
